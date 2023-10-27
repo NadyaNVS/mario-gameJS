@@ -1,30 +1,24 @@
 {
-  "name": "mario-game-js",
+  "name": "mario-game-js-copy",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "build": "webpack --mode=development",
-    "server": "webpack-dev-server --mode=development",
-    "deploy": "npm run build",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NadyaNVS/mario-gameJS.git"
   },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NadyaNVS/mario-gameJS/issues"
+  },
+  "homepage": "https://github.com/NadyaNVS/mario-gameJS#readme",
   "dependencies": {
-    "@babel/core": "^7.23.2",
-    "@babel/preset-env": "^7.23.2",
-    "babel-loader": "^9.1.3",
-    "css-loader": "^6.8.1",
-    "dotenv": "^16.3.1",
-    "dotenv-webpack": "^8.0.1",
-    "express": "^4.18.2",
-    "html-webpack-plugin": "^5.5.3",
-    "node-sass": "^9.0.0",
-    "process": "^0.11.10",
-    "sass-loader": "^13.3.2",
-    "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
+    "express": "^4.18.2"
   }
 }

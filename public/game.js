@@ -1,3 +1,5 @@
+// import "./styles.css";
+
 const { Client, Account, Databases, ID, Query } = Appwrite;
 const projectId = "6532d6ae8ef55352e84d";
 const databaseId = "653685a6dd99b9ade150";
@@ -43,6 +45,19 @@ function displayUsername() {
     .catch((error) => console.error(error));
 }
 
+function showScore() {
+  getUserId().then((userId) => {
+    console.log("userId", userId);
+    database
+      .listDocuments(databaseId, collectionId, [Query.equal("userId", userId)])
+      .then((response) => {
+        console.log(response);
+        const highScoreElement = document.getElementById("highscore");
+        highScoreElement.textContent = response.documents[0].highscore;
+      });
+  });
+}
+
 function updateScore(score) {
   //send an update to a document
   const currentHighScore = document.getElementById("highscore").textContent;
@@ -59,18 +74,6 @@ function updateScore(score) {
         .catch((error) => console.error(error));
     });
   }
-}
-
-function showScore() {
-  getUserId().then((userId) => {
-    console.log("userId", userId);
-    database
-      .listDocuments(databaseId, collectionId, [Query.equal("userId", userId)])
-      .then((response) => {
-        const highScoreElement = document.getElementById("highscore");
-        highScoreElement.textContent = response.documents[0].highscore;
-      });
-  });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
