@@ -1,5 +1,6 @@
 // import "./styles.css";
-
+var cors = require("cors");
+app.use(cors());
 const { Client, Account, Databases, ID, Query } = Appwrite;
 const projectId = "6532d6ae8ef55352e84d";
 const databaseId = "653685a6dd99b9ade150";
