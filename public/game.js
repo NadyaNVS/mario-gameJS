@@ -1,5 +1,6 @@
 // import "./styles.css";
-var cors = require("cors");
+import cors from "cors";
+// var cors = require("cors");
 app.use(cors());
 const { Client, Account, Databases, ID, Query } = Appwrite;
 const projectId = "6532d6ae8ef55352e84d";
